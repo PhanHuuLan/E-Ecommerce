@@ -1,0 +1,49 @@
+.card {
+  height: 400px;
+  padding-bottom: 20px;
+  border: 1px solid gray;
+  border-radius: 20px;
+  .image-product {
+    padding-top: 20px;
+    align-items: center;
+   .image {
+    margin-left: auto;
+    margin-right: auto;
+    height: 200px;
+    max-width: 200px;
+   } 
+  }
+  .card-content {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 10px;
+   .card-title {
+    font-size: 14px;
+    font-weight: 700;
+    overflow: hidden;
+    white-space: nowrap; 
+    text-overflow: ellipsis;
+   }
+   .card-price {
+    color: red;
+    font-size: 18px;
+    font-weight: 700;
+   }
+   .card-category {
+    padding: 5px 0;
+    font-size: 15px;
+   }
+  }
+}
+.card:hover {
+  height: 400px;
+  padding-bottom: 20px;
+  border: 2px solid black;
+  border-radius: 20px;
+  .card-title {
+    text-decoration: underline;
+    overflow: hidden;
+    white-space: nowrap; 
+    text-overflow: ellipsis;
+  }
+}

@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+svg {
+  display: block;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.row {
+  display: flex;
+  margin: -10px;
+  flex-wrap: wrap;
+}
+.row .col-1 {
+  width: 8.33%;
+}
+.row .col-2 {
+  width: 16.67%;
+}
+.row .col-3 {
+  width: 25%;
+}
+.row .col-4 {
+  width: 33.33%;
+}
+.row .col-5 {
+  width: 41.67%;
+}
+.row .col-6 {
+  width: 50%;
+}
+.row .col-7 {
+  width: 58.33%;
+}
+.row .col-8 {
+  width: 66.67%;
+}
+.row .col-9 {
+  width: 75%;
+}
+.row .col-10 {
+  width: 83.33%;
+}
+.row .col-11 {
+  width: 91.67%;
+}
+.row .col-12 {
+  width: 100%;
+}
+.row [class*=col] {
+  padding: 10px;
+}
+.row.no-gutter [class*=col] {
+  padding: 0;
+}
+
+header .header-top {
+  background-color: #F5F5F5;
+}
+header .header-top .header-top-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+header .header-top .user-menu-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .header-top .user-menu-list .user-menu-item {
+  font-size: 12px;
+  padding: 0px 5px;
+}
+header .header-top .user-menu-list li:nth-child(2) {
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+}
+header .header-main-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .header-main-wrapper .nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .header-main-wrapper .nav-list .nav-item {
+  padding: 0 13px;
+}
+header .header-main-wrapper .header-main-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .header-main-wrapper .header-main-list .header-main-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+  padding-left: 26px;
+}
+header .header-bottom {
+  padding: 10px 0;
+  font-size: 15px;
+  font-weight: 400;
+  background-color: #F5F5F5;
+  text-align: center;
+}
+header .header-bottom .header-bottom-title {
+  padding-bottom: 6px;
+}
+header .header-bottom .header-desc {
+  font-size: 13px;
+}
+header .header-bottom .header-desc .header-link {
+  text-decoration: underline;
+}
+
+.card {
+  height: 400px;
+  padding-bottom: 20px;
+  border: 1px solid gray;
+  border-radius: 20px;
+}
+.card .image-product {
+  padding-top: 20px;
+  align-items: center;
+}
+.card .image-product .image {
+  margin-left: auto;
+  margin-right: auto;
+  height: 200px;
+  max-width: 200px;
+}
+.card .card-content {
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 10px;
+}
+.card .card-content .card-title {
+  font-size: 14px;
+  font-weight: 700;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.card .card-content .card-price {
+  color: red;
+  font-size: 18px;
+  font-weight: 700;
+}
+.card .card-content .card-category {
+  padding: 5px 0;
+  font-size: 15px;
+}
+
+.card:hover {
+  height: 400px;
+  padding-bottom: 20px;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+.card:hover .card-title {
+  text-decoration: underline;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+main .section-collection {
+  padding: 20px 0 50px 0;
+}
+main .section-collection .collection-title {
+  padding: 50px 0;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+/*# sourceMappingURL=style.css.map */
