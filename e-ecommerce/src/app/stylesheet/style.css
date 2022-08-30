@@ -146,7 +146,7 @@ header .header-bottom .header-desc .header-link {
 }
 
 .card {
-  height: 400px;
+  height: 330px;
   padding-bottom: 20px;
   border: 1px solid gray;
   border-radius: 20px;
@@ -184,7 +184,7 @@ header .header-bottom .header-desc .header-link {
 }
 
 .card:hover {
-  height: 400px;
+  height: 330px;
   padding-bottom: 20px;
   border: 2px solid black;
   border-radius: 20px;
@@ -199,11 +199,25 @@ header .header-bottom .header-desc .header-link {
 main .section-collection {
   padding: 20px 0 50px 0;
 }
-main .section-collection .collection-title {
+main .section-collection .collection-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+main .section-collection .collection-header .collection-title {
   padding: 50px 0;
   font-size: 20px;
   font-weight: 400;
   line-height: 24px;
+}
+main .section-collection .collection-header #category-list {
+  cursor: pointer;
+  border: 2px solid gray;
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: 400;
 }
 
 /*# sourceMappingURL=style.css.map */
