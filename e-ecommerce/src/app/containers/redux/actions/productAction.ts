@@ -13,15 +13,8 @@ export const selectedProducts = (product : IAction) => {
     payload: product,
   }
 }
-export const removeSelectedProducts = (product : IAction) => {
+export const removeSelectedProducts = () => {
   return {
     type: ActionTypes.REMOVE_SELECTED_PRODUCT,
-    payload: product,
-  }
-}
-export const categoryProduct = (product : IAction) => {
-  return {
-    type: ActionTypes.CATEGORY_PRODUCTS,
-    payload: product,
   }
 }

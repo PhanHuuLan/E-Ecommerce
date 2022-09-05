@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { apiProducts } from "../../../apis/data";
 import { setProducts } from "../../../containers/redux/actions/productAction";
 import { IRootState } from "../../../interface/state-interface";
+import Loader from "./Loader";
 import Product from "./Product";
 
 const ProductList: React.FC = () => {
@@ -56,7 +57,11 @@ const ProductList: React.FC = () => {
           </div>
         </div>
         <ul className="product-list row ">
+        {Object.keys(data).length === 0 ? (
+          <Loader/>
+        ) : (
           <Product {...data} />
+        )}
         </ul>
       </div>
     </section>

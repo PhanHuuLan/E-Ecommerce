@@ -21,4 +21,38 @@ main {
     }
     
   }
+  .section-detail {
+    padding: 50px 0;
+    .detail-list {
+      display: flex;
+      justify-content: flex-start;
+      .wrapper-detail {
+        border: 1px solid gray;
+        .image-detail {
+          scale: 80%;
+        }
+      }
+      .card-detail {
+        padding-left: 50px;
+        .detail-title {
+          font-size: 24px;
+          font-weight: 400;
+          padding: 10px 0;
+        }
+        .detail-price{
+          font-size: 20px;
+          font-weight: 700;
+          color: red;
+        }
+        .detail-desc {
+          font-size: 15px;
+          font-weight: 400;
+          padding: 20px 0;
+        }
+        .detail-quantity {
+          padding: 15px 0;
+        }
+      }
+    }
+  }
 }
