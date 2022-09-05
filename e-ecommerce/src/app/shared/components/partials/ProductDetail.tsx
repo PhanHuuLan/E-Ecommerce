@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { detailProduct } from "../../../apis/data";
 import { selectedCart } from "../../../containers/redux/actions/cartAction";
 import {
@@ -115,14 +115,14 @@ const ProductDetail: React.FC = () => {
                     +
                   </button>
                 </div>
-                <a href="/cart/all">
+                <Link reloadDocument to={"/cart/all"}>
                   <button
                     onClick={(e) => handleAddToBad(id)}
                     className="btn btn-bag"
                   >
                     Add to Bag
                   </button>
-                </a>
+                </Link>
               </div>
             </li>
           </ul>
