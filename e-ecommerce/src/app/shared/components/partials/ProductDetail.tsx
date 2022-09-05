@@ -115,7 +115,7 @@ const ProductDetail: React.FC = () => {
                     +
                   </button>
                 </div>
-                <Link reloadDocument to={"/cart/all"}>
+                <Link to={"/cart/all"}>
                   <button
                     onClick={(e) => handleAddToBad(id)}
                     className="btn btn-bag"
