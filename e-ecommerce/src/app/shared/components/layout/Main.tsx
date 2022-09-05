@@ -6,7 +6,7 @@ import ProductList from "../partials/ProductList";
 
 const Main : React.FC = () => {
   return (
-      <Router>
+      
     <main>
         <Routes>
           <Route path="/" element={<ProductList/>} />
@@ -14,7 +14,7 @@ const Main : React.FC = () => {
           <Route path="/cart/all" element={<Cart/>} />
         </Routes>
     </main>
-      </Router>
+     
   );
 };
 export default Main;
