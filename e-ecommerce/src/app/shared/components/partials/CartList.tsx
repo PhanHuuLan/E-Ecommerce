@@ -25,7 +25,7 @@ const CartList: React.FC = () => {
               <div className="totals-item">
                 <label>Subtotal</label>
                 <div className="totals-value" id="cart-subtotal">
-                {handleSubTotal()}
+                {handleSubTotal().toFixed(2)}
                 </div>
               </div>
               <div className="totals-item">
