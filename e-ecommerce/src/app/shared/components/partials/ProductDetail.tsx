@@ -32,7 +32,7 @@ const ProductDetail: React.FC = () => {
     };
   }, [productId]);
 
-  let [quantity, setQuantity] = useState(1);
+  let [quantity, setQuantity] = useState(+1);
 
   const handleIncreaseQuantity = () => {
     if (quantity < 10) {
@@ -46,8 +46,11 @@ const ProductDetail: React.FC = () => {
       setQuantity(quantity);
     }
   };
-  const handleInputQuantity = (e: any) => {
-    setQuantity(e.target.value);
+  const handleInputQuantity = (e : any) => {
+    const value : any = e.target.value;
+    const newValue : any = value < 0 ? 1 : value && value > 10 ? 10 : value;
+    setQuantity(newValue);
+   
   };
   const handleAddToBad = (id: number) => {
     if (quantity > 10) {
@@ -67,11 +70,9 @@ const ProductDetail: React.FC = () => {
       const newProductCart: IProduct = { ...product, quantity: quantity };
       cart.push(newProductCart);
     } else {
-      cart[cart.indexOf(existProduct)].quantity += quantity;
+      cart[cart.indexOf(existProduct)].quantity += +quantity;
     }
     setStorage(listKeys.cart, cart);
-    console.log(product);
-    
     dispatch(selectedCart(product))
   };
 
@@ -103,9 +104,10 @@ const ProductDetail: React.FC = () => {
                     -
                   </button>
                   <input
+                    min={1}
                     onChange={(e) => handleInputQuantity(e)}
                     className="input-quantity"
-                    type="text"
+                    type="number"
                     value={quantity}
                   />
                   <button
@@ -117,7 +119,7 @@ const ProductDetail: React.FC = () => {
                 </div>
                 <Link reloadDocument to={"/cart/all"}>
                   <button
-                    onClick={(e) => handleAddToBad(id)}
+                    onClick={() => handleAddToBad(id)}
                     className="btn btn-bag"
                   >
                     Add to Bag
