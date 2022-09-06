@@ -48,9 +48,8 @@ const ProductDetail: React.FC = () => {
   };
   const handleInputQuantity = (e : any) => {
     const value : any = e.target.value;
-    const newValue : any = value < 0 ? 1 : value && value > 10 ? 10 : value;
-    setQuantity(newValue);
-   
+    const newValue  = value < 0 ? 1 : value && value > 10 ? 10 : value;
+    setQuantity(parseInt(newValue));
   };
   const handleAddToBad = (id: number) => {
     if (quantity > 10) {
@@ -72,6 +71,8 @@ const ProductDetail: React.FC = () => {
     } else {
       cart[cart.indexOf(existProduct)].quantity += +quantity;
     }
+    
+    
     setStorage(listKeys.cart, cart);
     dispatch(selectedCart(product))
   };
@@ -105,7 +106,7 @@ const ProductDetail: React.FC = () => {
                   </button>
                   <input
                     min={1}
-                    onChange={(e) => handleInputQuantity(e)}
+                    onInput={(e) => handleInputQuantity(e)}
                     className="input-quantity"
                     type="number"
                     value={quantity}
