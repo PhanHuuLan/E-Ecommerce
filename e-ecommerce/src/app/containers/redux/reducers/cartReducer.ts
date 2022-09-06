@@ -60,12 +60,17 @@ export const cartReducer = (state = initialState, action: IAction) => {
       const index = cartNew.findIndex(
         (cartItem) => cartItem.id === action.payload.id
         );
-        let newQuantity = action.payload.e < 0 ? 1 : action.payload.e && action.payload.e > 10 ? 10 : action.payload.e;
+        let newQuantity = action.payload.e < 0 ? 1 : action.payload.e 
+        && action.payload.e > 10 ? 10 : action.payload.e
         if(newQuantity <= 0 && newQuantity !== '') {
           newQuantity = 1;
         }
-        cartNew[index].quantity = parseInt(newQuantity);
-        setStorage(listKeys.cart, cartNew);
+        
+          cartNew[index].quantity = parseFloat(newQuantity);
+          if(cartNew[index].quantity === null) {   
+            setStorage(listKeys.cart, cartNew);
+          }
+
     
       return {
         ...state,
