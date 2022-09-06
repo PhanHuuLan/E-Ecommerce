@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   removeCart,
   updateDescreaseCart,
+  updateInputCart,
   updateInscreaseCart,
 } from "../../../containers/redux/actions/cartAction";
 import { IRootState } from "../../../interface/state-interface";
@@ -31,7 +32,10 @@ const CartItem: React.FC = (props) => {
   const removeCartItem = (id: number) => {
     dispatch(removeCart(id));
   };
-
+  const updateInputQuantityCart = (id: number, e : any) =>  {
+    
+    dispatch(updateInputCart(id,e.target.value))
+  }
   const renderCart: any  = () => products.map((product: any) => {
     const { id, title, image, price, category, quantity } = product;
 
@@ -56,7 +60,7 @@ const CartItem: React.FC = (props) => {
               >
                 -
               </button>
-              <input className="input-quantity" type="text" value={quantity} />
+              <input onChange={(e) => updateInputQuantityCart(id, e)} className="input-quantity" type="number" value={quantity} />
               <button
                 onClick={() => updateQuantityCartItem("inscrease", id)}
                 className="btn-raise btn-change"

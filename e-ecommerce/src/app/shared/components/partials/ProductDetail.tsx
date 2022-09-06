@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { detailProduct } from "../../../apis/data";
-import { selectedCart } from "../../../containers/redux/actions/cartAction";
 import {
   removeSelectedProducts,
   selectedProducts,
@@ -48,7 +47,10 @@ const ProductDetail: React.FC = () => {
   };
   const handleInputQuantity = (e : any) => {
     const value : any = e.target.value;
-    const newValue  = value < 0 ? 1 : value && value > 10 ? 10 : value;
+    let newValue  = value < 0 ? 1 : value && value > 10 ? 10 : value;
+    if(newValue <= 0 && newValue !== '') {
+      newValue = 1;
+    }
     setQuantity(parseInt(newValue));
   };
   const handleAddToBad = (id: number) => {
@@ -71,10 +73,8 @@ const ProductDetail: React.FC = () => {
     } else {
       cart[cart.indexOf(existProduct)].quantity += +quantity;
     }
-    
-    
+       
     setStorage(listKeys.cart, cart);
-    dispatch(selectedCart(product))
   };
 
   const { id, image, title, price, description, category } = product;

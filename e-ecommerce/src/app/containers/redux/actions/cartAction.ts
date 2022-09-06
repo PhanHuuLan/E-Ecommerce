@@ -8,12 +8,7 @@ export const setCarts = (products : IAction) => {
     payload: products,
   }
 }
-export const selectedCart = (products: IAction) => {
-  return {
-    type: ActionTypes.SELECTED_CART,
-    payload: products
-  }
-};
+
 export const updateInscreaseCart = (id: number) => {
   return {
     type: ActionTypes.INSCREASE_CART,
@@ -31,5 +26,11 @@ export const removeCart = (id: number) => {
   return {
     type: ActionTypes.REMOVE_CART,
     payload: id
+  }
+};
+export const updateInputCart = (id: number, e : any) => {
+  return {
+    type: ActionTypes.INPUT_QUANTITY_CART,
+    payload: {id, e},
   }
 };
